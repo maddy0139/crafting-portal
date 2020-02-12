@@ -1,0 +1,12 @@
+{
+    "getAllCategoriesUri": "/categories",
+    "getCategoryUri": "/category/${categoryId}",
+    "deleteCategoryUri": "/category/${categoryId}",
+    "addCategoryUri": "/category",
+    "updateCategoryUri": "/category/${categoryId}",
+    "loginUserUri": "/auth/signin",
+    "loadUserDetailsUri": "/user/${userId}",
+    "signupUserUri": "/user/new",
+    "checkUsernameAvailabilityUri": "/checkUsernameAvailability",
+    "checkEmailAvailabilityUri": "/checkEmailAvailability"
+}
