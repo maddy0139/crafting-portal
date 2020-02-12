@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/crafting-portal/static/css/main.fd81e1b9.chunk.css",
+    "main.js": "/crafting-portal/static/js/main.ae9bf8af.chunk.js",
+    "main.js.map": "/crafting-portal/static/js/main.ae9bf8af.chunk.js.map",
+    "runtime-main.js": "/crafting-portal/static/js/runtime-main.eca684d1.js",
+    "runtime-main.js.map": "/crafting-portal/static/js/runtime-main.eca684d1.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/crafting-portal/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.2707927d.chunk.js": "/crafting-portal/static/js/2.2707927d.chunk.js",
+    "static/js/2.2707927d.chunk.js.map": "/crafting-portal/static/js/2.2707927d.chunk.js.map",
+    "index.html": "/crafting-portal/index.html",
+    "precache-manifest.5e217283df2aa561f96a5e987f4c78de.js": "/crafting-portal/precache-manifest.5e217283df2aa561f96a5e987f4c78de.js",
+    "service-worker.js": "/crafting-portal/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/crafting-portal/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.fd81e1b9.chunk.css.map": "/crafting-portal/static/css/main.fd81e1b9.chunk.css.map",
+    "static/js/2.2707927d.chunk.js.LICENSE": "/crafting-portal/static/js/2.2707927d.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eca684d1.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.2707927d.chunk.js",
+    "static/css/main.fd81e1b9.chunk.css",
+    "static/js/main.ae9bf8af.chunk.js"
+  ]
+}
