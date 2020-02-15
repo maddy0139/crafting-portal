@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,15 +33,14 @@ body {
 .home_page_banner {
   height: 300px;
   margin-bottom: 2%;
-
 }
 
 .home_page_banner img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    height: auto;
-    border-radius: 5px;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  height: auto;
+  border-radius: 5px;
 }
 
 /* .ds-alert-loader {
@@ -83,10 +82,12 @@ body {
 
 @keyframes loader-rotate {
   0% {
-    transform: rotate(0); }
+    transform: rotate(0);
+  }
   100% {
-    transform: rotate(360deg); } }
-
+    transform: rotate(360deg);
+  }
+}
 
 .home-container {
   max-width: 1060px;
@@ -95,9 +96,9 @@ body {
 }
 
 .login-container {
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto;
-  box-shadow: 0 6px 15px rgba(36,37,38,.08);
+  box-shadow: 0 6px 15px rgba(36, 37, 38, 0.08);
 }
 
 .login-form-wrapper {
@@ -105,7 +106,7 @@ body {
   padding: 30px;
 }
 
-.login-form{
+.login-form {
   max-width: 300px;
   margin: auto;
 }
@@ -114,7 +115,7 @@ body {
   width: 100%;
 }
 
-.login-form-forgot{
+.login-form-forgot {
   float: right;
 }
 .login-form-link {
@@ -123,7 +124,7 @@ body {
   text-decoration: none;
   outline: 0;
   cursor: pointer;
-  transition: color .3s;
+  transition: color 0.3s;
   line-height: 40px;
 }
 
@@ -132,15 +133,16 @@ body {
   color: white;
 }
 
-.signup-btn, .login-btn{
+.signup-btn,
+.login-btn {
   width: 100%;
 }
 
-.form-header{
+.form-header {
   text-align: center;
 }
 
-.gift-details .card{
+.gift-details .card {
   width: 100%;
 }
 
@@ -155,7 +157,7 @@ body {
   margin: 20px;
 }
 
-.action-btn > button{
+.action-btn > button {
   margin-right: 10px;
 }
 
@@ -167,15 +169,15 @@ body {
   position: fixed;
 }
 
-.ds-alert-loader{
-  margin:0;
+.ds-alert-loader {
+  margin: 0;
 }
 
 .ds-alert-loader .ds-loader-new {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   z-index: 301;
   top: 0;
   display: flex;
@@ -197,31 +199,31 @@ body {
   width: 66px;
   height: 66px;
   position: absolute;
-  top: calc(50% - 66px);
-  left: calc(50% - 66px);
+  top: calc(50% - 33px);
+  left: calc(50% - 33px);
   animation: contanim 2s linear infinite;
 }
 
 @keyframes contanim {
   100% {
-      transform: rotate(360deg)
+    transform: rotate(360deg);
   }
 }
 
 @keyframes strokeanim {
   0% {
-      stroke-dasharray: 1, 300;
-      stroke-dashoffset: 0
+    stroke-dasharray: 1, 300;
+    stroke-dashoffset: 0;
   }
 
   50% {
-      stroke-dasharray: 120, 300;
-      stroke-dashoffset: -58.54832
+    stroke-dasharray: 120, 300;
+    stroke-dashoffset: -58.54832;
   }
 
   100% {
-      stroke-dasharray: 120, 300;
-      stroke-dashoffset: -175.64497
+    stroke-dasharray: 120, 300;
+    stroke-dashoffset: -175.64497;
   }
 }
 
@@ -237,7 +239,7 @@ body {
   stroke: #096dd9;
   stroke-dasharray: 1, 300;
   stroke-dashoffset: 0;
-  animation: strokeanim 3s calc(.2s * (1)) ease infinite;
+  animation: strokeanim 3s calc(0.2s * (1)) ease infinite;
   transform-origin: center center;
 }
 
@@ -245,7 +247,7 @@ body {
   stroke: #000000;
   stroke-dasharray: 1, 300;
   stroke-dashoffset: 0;
-  animation: strokeanim 3s calc(.2s * (2)) ease infinite;
+  animation: strokeanim 3s calc(0.2s * (2)) ease infinite;
   transform-origin: center center;
 }
 
@@ -253,6 +255,10 @@ body {
   stroke: #aaadd1;
   stroke-dasharray: 1, 300;
   stroke-dashoffset: 0;
-  animation: strokeanim 3s calc(.2s * (3)) ease infinite;
+  animation: strokeanim 3s calc(0.2s * (3)) ease infinite;
   transform-origin: center center;
+}
+
+.navbar-expand .navbar-nav .nav-link {
+  padding-right: 0 !important;
 }
