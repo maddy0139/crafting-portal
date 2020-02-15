@@ -3,10 +3,13 @@ import { Table, Button } from 'react-bootstrap';
 import AddCategory from '../modal/AddCategory.component';
 import { ICategory } from '../../../interfaces/ICategoryViewProps';
 import CategoryApi from '../../../apis/category-api/CategoryApi';
+import LoaderApi from '../../../apis/loader-api/loaderApi';
+
 import Store from '../../../store/configureStore';
 import { connect } from 'react-redux';
 
 const categoryApi = new CategoryApi(Store);
+const loaderApi = new LoaderApi(Store);
 
 interface IAddCategoryProps {
     show: boolean,
@@ -136,16 +139,16 @@ function mapStateToProps() {
 function mapDispatchToProps() {
     return {
         addCategory: (category: ICategory) => {
-            return categoryApi.addCategory(category);
+            return loaderApi.loadWithLoader(categoryApi.addCategory, category);
         },
         loadCategories: () => {
-            return categoryApi.loadCategory();
+            return loaderApi.loadWithLoader(categoryApi.loadCategory, {});
         },
         deleteCategory: (categoryId:string) => {
-            return categoryApi.deleteCategory(categoryId);
+            return loaderApi.loadWithLoader(categoryApi.deleteCategory, categoryId);
         },
         editCategory: (category:ICategory) => {
-            return categoryApi.editCategory(category);
+            return loaderApi.loadWithLoader(categoryApi.editCategory, category);
         }
     }
 }
