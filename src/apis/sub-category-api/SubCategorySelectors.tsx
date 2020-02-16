@@ -4,14 +4,14 @@ export default class Selectors {
 
     sliceSelector = (state:any) => state;
 
-    loadCategorySelector = createSelector(this.sliceSelector, (slice) => {
-        return slice && slice.categories; 
+    loadSubCategorySelector = createSelector(this.sliceSelector, (slice) => {
+        return slice && slice.subCategories; 
     });
-    getCategoryIdSelector = createSelector(this.sliceSelector, (slice) => {
-        return slice && slice.selectedCategoryId; 
+    getSubCategoryIdSelector = createSelector(this.sliceSelector, (slice) => {
+        return slice && slice.selectedSubCategoryId; 
     });
 
-    categoryDetailsSelector = createSelector(this.sliceSelector, (slice) => {
-        return slice && slice.categoryDetails;
+    subCategoryDetailsSelector = createSelector(this.sliceSelector, (slice) => {
+        return slice && slice.subCategoryDetails;
     })
 }

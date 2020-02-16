@@ -14,7 +14,7 @@ export const subCategoryReducer = (state = initialState, action: any) => {
         case `${ActionTypes.LOAD_SUB_CATEGORIES}_SUCCESS`:
             newState = {
                 ...state,
-                subCategories: payload && payload.subCategories
+                subCategories: payload
             }
             break;
         case `${ActionTypes.GET_SUB_CATEGORIES}_SUCCESS`:
@@ -23,7 +23,7 @@ export const subCategoryReducer = (state = initialState, action: any) => {
         case `${ActionTypes.LOAD_SUB_CATEGORY_DETAILS}_SUCCESS`:
             newState = {
                 ...state,
-                subCategoryDetails: payload && payload.subCategory
+                subCategoryDetails: payload
             };
             break;
         case `${ActionTypes.ADD_SUB_CATEGORY}_SUCCESS`:

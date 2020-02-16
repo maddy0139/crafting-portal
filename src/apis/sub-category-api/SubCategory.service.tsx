@@ -1,44 +1,44 @@
 import DefaultServiceBase from "../ServiceClass";
-import { ICategory } from "../../interfaces/ICategoryViewProps";
+import { ISubCategory } from "../../interfaces/ISubCategory";
 class SubCategoryService {
     serviceBase: any;
     constructor(serviceBase = DefaultServiceBase) {
         this.serviceBase = serviceBase;
-        this.getAllCategories = this.getAllCategories.bind(this);
+        this.getAllSubCategories = this.getAllSubCategories.bind(this);
     }
 
-    getAllCategoriesUri = () => {
-        return this.serviceBase.getUri('getAllCategoriesUri')
+    getAllSubCategoriesUri = () => {
+        return this.serviceBase.getUri('getAllSubCategoriesUri')
     }
-    getAllCategories = () => {
-        return this.serviceBase.ajax.get(this.getAllCategoriesUri(), {});
-    }
-
-    getCategoryUri = (categoryId: string) => {
-        return this.serviceBase.getUri('getCategoryUri', { categoryId });
-    }
-    getCategoryDetails = (categoryId:string) => {
-        return this.serviceBase.ajax.get(this.getCategoryUri(categoryId))
-    }
-    addCategoryUri = () => {
-        return this.serviceBase.getUri('addCategoryUri');
-    }
-    addCategory = (payload:any) => {
-        return this.serviceBase.ajax.post(this.addCategoryUri(), payload);
+    getAllSubCategories = (config: any) => {
+        return this.serviceBase.ajax.get(this.getAllSubCategoriesUri(), config);
     }
 
-    deleteCategoryUri = (categoryId:string) => {
-        return this.serviceBase.getUri('deleteCategoryUri', { categoryId });
+    getSubCategoryUri = (subCategoryId: string) => {
+        return this.serviceBase.getUri('getSubCategoryUri', { subCategoryId });
     }
-    deleteCategory = (categoryId:string) => {
-        return this.serviceBase.ajax.delete(this.deleteCategoryUri(categoryId));
+    getSubCategoryDetails = (subCategoryId:string) => {
+        return this.serviceBase.ajax.get(this.getSubCategoryUri(subCategoryId))
+    }
+    addSubCategoryUri = () => {
+        return this.serviceBase.getUri('addSubCategoryUri');
+    }
+    addSubCategory = (payload:any) => {
+        return this.serviceBase.ajax.post(this.addSubCategoryUri(), payload);
     }
 
-    updateCategoryUri = (categoryId:string) => {
-        return this.serviceBase.getUri('updateCategoryUri', { categoryId });
+    deleteSubCategoryUri = (subCategoryId:string) => {
+        return this.serviceBase.getUri('deleteSubCategoryUri', { subCategoryId });
     }
-    updateCategory = (category:ICategory) => {
-        return this.serviceBase.ajax.post(this.updateCategoryUri(category._id), category);
+    deleteSubCategory = (subCategoryId:string) => {
+        return this.serviceBase.ajax.delete(this.deleteSubCategoryUri(subCategoryId));
+    }
+
+    updateSubCategoryUri = (subCategoryId:string) => {
+        return this.serviceBase.getUri('updateSubCategoryUri', { subCategoryId });
+    }
+    updateSubCategory = (subCategory:ISubCategory) => {
+        return this.serviceBase.ajax.post(this.updateSubCategoryUri(subCategory._id), subCategory);
     }
 
 }

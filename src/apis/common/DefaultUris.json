@@ -1,5 +1,6 @@
 {
     "getAllCategoriesUri": "/categories",
+    "getAllSubCategoriesUri": "/subcategories",
     "getCategoryUri": "/category/${categoryId}",
     "deleteCategoryUri": "/category/${categoryId}",
     "addCategoryUri": "/category",

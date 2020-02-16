@@ -1,7 +1,7 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import image1 from '../../../assets/images/image-1.png';
-import image2 from '../../../assets/images/image-5.png';
+import image1 from '../../../assets/images/gifts.jpg';
+import image2 from '../../../assets/images/gift.jpg';
 
 export default class CarouselComponents extends React.Component<{}, {}> {
   constructor(props: {}) {
@@ -17,10 +17,10 @@ export default class CarouselComponents extends React.Component<{}, {}> {
             src={image1}
             className="d-block w-100"
             alt="banner"
-            style={{ maxHeight: '300px' }}
           />
           <Carousel.Caption>
-            <h3>First Slide</h3>
+            <h3></h3>
+            <p>Gifts that makes a difference</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -28,10 +28,10 @@ export default class CarouselComponents extends React.Component<{}, {}> {
             src={image2}
             className="d-block w-100"
             alt="banner"
-            style={{ maxHeight: '300px' }}
           />
           <Carousel.Caption>
-            <h3>Second Slide</h3>
+          <h3></h3>
+            <p>Give your loved ones a perfect Gift</p>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

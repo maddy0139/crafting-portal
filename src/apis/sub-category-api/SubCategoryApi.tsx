@@ -1,10 +1,10 @@
 import Selectors from './SubCategorySelectors';
 import BaseApi from '../base-api/BaseApi';
 import ActionTypes from './SubCategoryActionTypes';
-import DefaulterviceBase from '../ServiceClass'
-import categoryServiceClass from './SubCategory.service'
-import { ICategory } from '../../interfaces/ICategoryViewProps'
-import _bindAll from 'lodash/bindAll'
+import DefaulterviceBase from '../ServiceClass';
+import subCategoryServiceClass from './SubCategory.service';
+import _bindAll from 'lodash/bindAll';
+import { ISubCategory } from '../../interfaces/ISubCategory';
 
 export default class CategoryApi extends BaseApi {
   sliceName: string
@@ -13,7 +13,7 @@ export default class CategoryApi extends BaseApi {
 
   constructor(
     store: any,
-    sliceName = 'categoryApi',
+    sliceName = 'subCategoryApi',
     ServiceBase = DefaulterviceBase
   ) {
     super(store, sliceName)
@@ -21,63 +21,67 @@ export default class CategoryApi extends BaseApi {
     this.selectors = new Selectors()
     this.ServiceBase = ServiceBase
     _bindAll(this, [
-      'loadCategory',
-      'laodCategoryDetails',
-      'addCategory',
-      'deleteCategory',
-      'editCategory'
+      'loadSubCategory',
+      'laodSubCategoryDetails',
+      'addSubCategory',
+      'deleteSubCategory',
+      'editSubCategory'
     ])
   }
-  async loadCategory() {
-    await this.serviceRequest(
-      categoryServiceClass.getAllCategories,
-      {},
-      ActionTypes.LOAD_CATEGORIES
-    )
-    return null
-  }
-  async laodCategoryDetails() {
-    await this.serviceRequest(
-      categoryServiceClass.getCategoryDetails,
-      this.getSelectedCategoryId(),
-      ActionTypes.LOAD_CATEGORY_DETAILS
+  async loadSubCategory(categoryId: string) {
+    const config = {
+        params: {
+            categoryId
+        }
+    }
+    return await this.serviceRequest(
+      subCategoryServiceClass.getAllSubCategories,
+      config,
+      ActionTypes.LOAD_SUB_CATEGORIES
     )
   }
-
-  async addCategory(category: ICategory) {
-    await this.serviceRequest(
-      categoryServiceClass.addCategory,
-      category,
-      ActionTypes.ADD_CATEGORY
+  async laodSubCategoryDetails() {
+    return await this.serviceRequest(
+      subCategoryServiceClass.getSubCategoryDetails,
+      this.getSelectedSubCategoryId(),
+      ActionTypes.LOAD_SUB_CATEGORY_DETAILS
     )
   }
 
-  async deleteCategory(categoryId: string) {
+  async addSubCategory(subCategory: ISubCategory) {
     await this.serviceRequest(
-      categoryServiceClass.deleteCategory,
-      categoryId,
-      ActionTypes.DELETE_CATEGORY
+      subCategoryServiceClass.addSubCategory,
+      subCategory,
+      ActionTypes.ADD_SUB_CATEGORY
     )
   }
 
-  async editCategory(category: ICategory) {
+  async deleteSubCategory(subCategoryId: string) {
     await this.serviceRequest(
-      categoryServiceClass.updateCategory,
-      category,
+      subCategoryServiceClass.deleteSubCategory,
+      subCategoryId,
+      ActionTypes.DELETE_SUB_CATEGORY
+    )
+  }
+
+  async editSubCategory(subCategory: ISubCategory) {
+    await this.serviceRequest(
+      subCategoryServiceClass.updateSubCategory,
+      subCategory,
       ActionTypes.EDIT_CATEGORY
     )
   }
-  getCategory = () => {
-    return this.selectors.loadCategorySelector(this.getState())
+  getSubCategory = () => {
+    return this.selectors.loadSubCategorySelector(this.getState())
   }
 
-  getCategoryDetails = (): ICategory => {
-    return this.selectors.categoryDetailsSelector(this.getState())
+  getSubCategoryDetails = (): ISubCategory => {
+    return this.selectors.subCategoryDetailsSelector(this.getState())
   }
-  setSelectedCategoryId = (id: string) => {
+  setSelectedSubCategoryId = (id: string) => {
     this.dispatchStoreAction(ActionTypes.SET_SELECTED_CATEGORY_ID, id)
   }
-  getSelectedCategoryId = (): string => {
-    return this.selectors.getCategoryIdSelector(this.getState())
+  getSelectedSubCategoryId = (): string => {
+    return this.selectors.getSubCategoryIdSelector(this.getState())
   }
 }
