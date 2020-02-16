@@ -55,14 +55,15 @@ class HeaderComponent extends React.Component<IHeaderProps, {}> {
                     userInformation.lastName
                   }`}
                   id="basic-nav-dropdown"
+                  eventKey={3}
                 >
-                  <NavDropdown.Item as={Link} to="/home">
+                  <NavDropdown.Item as={Link} to="/home" eventKey="3.1">
                     Home
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/profile">
+                  <NavDropdown.Item as={Link} to="/profile" eventKey="3.2">
                     Profile
                   </NavDropdown.Item>
-                  <NavDropdown.Item as={Link} to="/settings">
+                  <NavDropdown.Item as={Link} to="/settings" eventKey="3.3">
                     Settings
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
@@ -78,7 +79,7 @@ class HeaderComponent extends React.Component<IHeaderProps, {}> {
             )}
             {!userInformation && (
               <Nav>
-                <Nav.Link as={Link} to="/login">
+                <Nav.Link as={Link} eventKey={1} to="/login">
                   Login
                 </Nav.Link>
                 <Nav.Link as={Link} eventKey={2} to="/signup">
