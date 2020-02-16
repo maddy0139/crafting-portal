@@ -15,7 +15,6 @@ export default class CarouselComponents extends React.Component<{}, {}> {
         <Carousel.Item>
           <img
             src={image1}
-            className="d-block w-100"
             alt="banner"
           />
           <Carousel.Caption>
@@ -26,7 +25,6 @@ export default class CarouselComponents extends React.Component<{}, {}> {
         <Carousel.Item>
           <img
             src={image2}
-            className="d-block w-100"
             alt="banner"
           />
           <Carousel.Caption>

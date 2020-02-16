@@ -22,7 +22,7 @@ const TilesView: React.FC<ICategoryViewProps> = props => {
                 }}
               >
                 <Card.Img
-                  variant="top"
+                  className="img-fluid"
                   src={category.imageUrl}
                   style={{
                     width: 'fit-content',
