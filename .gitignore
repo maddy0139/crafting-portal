@@ -1,0 +1,15 @@
+node_modules
+.idea
+.test
+.nyc_output
+dist
+lib
+*.log
+test-reports
+npm-debug.log.*
+.npmrc
+.demorc
+yarn.lock
+package-lock.json
+.history
+demo
