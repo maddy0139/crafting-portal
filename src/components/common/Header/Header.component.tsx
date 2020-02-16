@@ -49,7 +49,7 @@ class HeaderComponent extends React.Component<IHeaderProps, {}> {
             className="justify-content-end"
           >
             {userInformation && (
-              <Nav className="mr-auto">
+              <Nav>
                 <NavDropdown
                   title={`${userInformation.firstName} ${
                     userInformation.lastName
