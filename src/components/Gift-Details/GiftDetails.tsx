@@ -1,10 +1,11 @@
-import React from "react";
-import IGiftdetailsProps from "../../interfaces/IGiftdetailsProps";
-import { connect } from "react-redux";
-import CategoryApi from "../../apis/category-api/CategoryApi";
-import LoaderApi from "../../apis/loader-api/loaderApi";
-import Store from "../../store/configureStore";
-import { Card } from "react-bootstrap";
+import React from 'react';
+import IGiftdetailsProps from '../../interfaces/IGiftdetailsProps';
+import { connect } from 'react-redux';
+import CategoryApi from '../../apis/category-api/CategoryApi';
+import LoaderApi from '../../apis/loader-api/loaderApi';
+import Store from '../../store/configureStore';
+import { Card } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
 
 const categoryApi = new CategoryApi(Store);
 const loaderApi = new LoaderApi(Store);
@@ -25,11 +26,39 @@ class GiftdetailsComponents extends React.Component<IGiftdetailsProps> {
       <div className="container gift-details">
         {categoryDetails && (
           <Card>
-            <Card.Img
-              variant="top"
-              src={categoryDetails.imageUrl}
-              style={{ width: "100%", height: "320px" }}
-            />
+            <Carousel className="home_page_banner">
+              <Carousel.Item style={{ backgroundColor: 'gray' }}>
+                <img
+                  src={categoryDetails.imageUrl}
+                  className="d-block"
+                  alt="banner"
+                  style={{
+                    maxHeight: '300px',
+                    width: 'fit-content',
+                    margin: 'auto'
+                  }}
+                />
+                <Carousel.Caption>
+                  <h3>{categoryDetails.title}</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item style={{ backgroundColor: 'gray' }}>
+                <img
+                  src={categoryDetails.imageUrl}
+                  className="d-block"
+                  alt="banner"
+                  style={{
+                    maxHeight: '300px',
+                    width: 'fit-content',
+                    margin: 'auto'
+                  }}
+                />
+                <Carousel.Caption>
+                  <h3>Explosion Box</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
+
             <Card.Body>
               <Card.Title>{categoryDetails.title}</Card.Title>
               <Card.Text>{categoryDetails.details}</Card.Text>
