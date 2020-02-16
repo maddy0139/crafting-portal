@@ -2,6 +2,7 @@
   "name": "crafting-portal-typescript",
   "version": "0.1.0",
   "private": true,
+  "description": "Feelings through Crafting provides amazing personalized gifts for your loved ones.",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
